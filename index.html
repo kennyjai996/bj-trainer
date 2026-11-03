@@ -184,6 +184,70 @@ table.chart{border-collapse:collapse;width:100%;font-family:var(--f-mono);font-s
 .row select{flex:none;max-width:52%;background:var(--felt-2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 8px;font:inherit;font-size:.82rem}
 .reset{all:unset;cursor:pointer;color:var(--bad);font-size:.86rem;padding:10px 0}
 .confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.84rem;color:var(--muted)}
+/* table simulation */
+.seg.two{flex:none;grid-template-columns:1fr 1fr;padding:3px}
+.seg.two button{padding:5px 0;font-size:.84rem}
+.pm{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:8px}
+.pm[hidden],.sim-scroll[hidden]{display:none!important}
+.sim-scroll{flex:1 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:12px;padding-bottom:4px}
+.sim-top{flex:none;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.sim-top b{color:var(--ink);font-family:var(--f-mono)}
+.linkbtn{all:unset;cursor:pointer;color:var(--brass);font-size:.8rem}
+.linkbtn[disabled]{opacity:.3;cursor:default}
+.linkbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.sim-table{justify-content:space-between;padding:10px 10px 8px}
+.sim-table .card{height:var(--simch,96px);width:calc(var(--simch,96px) * .71);font-size:calc(var(--simch,96px) * .1455);border-radius:calc(var(--simch,96px) * .07)}
+.card.back{background:repeating-linear-gradient(45deg,#7a1f24 0 6px,#5e161b 6px 12px);box-shadow:inset 0 0 0 3px var(--card),0 3px 8px rgba(0,0,0,.4)}
+.card.ghost{background:transparent;border:1.5px dashed rgba(217,178,95,.35);box-shadow:none;animation:none;box-sizing:border-box}
+.hand.ov{gap:0}
+.hand.ov .card+.card{margin-left:calc(var(--simch,96px) * -.39)}
+.dseat{flex:none;display:flex;flex-direction:column;align-items:center;gap:5px}
+.phands{flex:none;display:flex;justify-content:center;align-items:flex-end;gap:6px}
+.ph{display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px;border-radius:10px;border:1px solid transparent;min-width:0}
+.ph.on{border-color:var(--brass);background:rgba(217,178,95,.1)}
+.phinfo{display:flex;gap:5px;align-items:center;white-space:nowrap}
+.betchip{font-family:var(--f-mono);font-size:.7rem;font-weight:600;color:#1b1408;background:var(--brass);border-radius:999px;padding:1px 7px}
+.res{font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:6px;background:rgba(0,0,0,.4);white-space:nowrap}
+.res.w{color:var(--ok)}.res.l{color:var(--bad)}.res.p{color:var(--muted)}
+.sim-ctrl{flex:none;height:148px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.betamt{display:flex;justify-content:center;align-items:baseline;gap:10px;font-size:.9rem}
+.betamt b{font-family:var(--f-mono);font-size:1.1rem}
+.betamt span{font-size:.74rem;color:var(--muted)}
+.chiprow{display:flex;justify-content:center;gap:12px}
+.pchip{all:unset;cursor:pointer;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-weight:700;font-size:.8rem;color:#fff;background:var(--c);
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.85),inset 0 0 0 6px var(--c),inset 0 0 0 7px rgba(255,255,255,.35),0 3px 0 rgba(0,0,0,.35)}
+.pchip:active{transform:translateY(2px)}
+.pchip[disabled]{opacity:.3;cursor:not-allowed}
+.pchip:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.p100{--c:#6b7a86}.p500{--c:#6a3d8f}.p1000{--c:#a87b22}.p5000{--c:#b84a24}
+.btnrow{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.ctrl-msg{text-align:center;font-size:.9rem;line-height:1.5}
+.ctrl-msg.small{font-size:.76rem;color:var(--muted);min-height:1.1em}
+.ctrl-msg.big{font-size:1.15rem;font-weight:700;font-family:var(--f-mono)}
+.resume{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid rgba(217,178,95,.5);background:rgba(217,178,95,.08)}
+.resume div{min-width:0}.resume b{display:block;font-size:.9rem}.resume span{font-size:.78rem;color:var(--muted)}
+.hrow{display:grid;grid-template-columns:1.2fr 1.1fr .9fr 1.1fr;gap:6px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:.8rem;font-variant-numeric:tabular-nums}
+.hrow:first-child{border-top:0}
+.hd small{display:block;color:var(--muted);font-size:.7rem}
+.hn{font-family:var(--f-mono);font-weight:600}
+.ha,.hl{color:var(--muted);text-align:right}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cmp>div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.cmp span{display:block;font-size:.74rem;color:var(--muted)}
+.cmp b{display:block;font-family:var(--f-mono);font-size:1.15rem;margin:2px 0}
+.cmp small{display:block;font-size:.7rem;color:var(--muted);line-height:1.4}
+.mrow details{grid-column:1/-1}
+.mcs{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.mcs i{font-style:normal;color:var(--muted);margin:0 4px}
+.mc{display:inline-block;background:var(--card);color:var(--card-ink);border-radius:4px;padding:0 5px;font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:.82rem;line-height:1.5}
+.mc.red{color:var(--red)}
+#srcs{flex-wrap:wrap}
+.card.still{animation:none}
+.ssum{grid-template-columns:1fr 1fr}
+.ssum .wide{grid-column:1/-1}
+.ssum .wide b{font-size:1.6rem}
+.ssum b{font-size:1.1rem;overflow-wrap:anywhere}
 @media (max-width:380px){.card{width:66px;height:94px;font-size:13.7px}.act{font-size:.74rem}.ring{width:112px;height:112px}.sum b{font-size:1.05rem}}
 @media (max-height:620px){#s-play .seat>.label{display:none}@supports (container-type:size){.table .card{--ch:clamp(44px,calc((100cqh - 76px) / 2),120px)}}}
 @media (prefers-reduced-motion:reduce){.card{animation:none}}
@@ -226,6 +290,8 @@ table.chart{border-collapse:collapse;width:100%;font-family:var(--f-mono);font-s
 
   <!-- PLAY -->
   <section class="screen" id="s-play" hidden>
+    <div class="seg two" id="playModes"><button data-pm="quiz" aria-pressed="true">題目練習</button><button data-pm="table" aria-pressed="false">牌桌模擬</button></div>
+    <div class="pm" id="quiz">
     <div class="chips" id="modes">
       <button class="chip" data-m="all" aria-pressed="true">全部</button>
       <button class="chip" data-m="hard" aria-pressed="false">硬牌</button>
@@ -247,6 +313,20 @@ table.chart{border-collapse:collapse;width:100%;font-family:var(--f-mono);font-s
       <button class="act a-R" data-a="R">投降<small>SURR.</small></button>
     </div>
     <div class="slip" id="slip"></div>
+    </div>
+    <div class="pm" id="sim" hidden>
+      <div class="sim-scroll" id="simSetup"></div>
+      <div class="pm" id="simGame" hidden>
+        <div class="sim-top"><span>第 <b id="gRound"></b> / <span id="gN"></span> 手</span><span>籌碼 <b id="gChips"></b></span><button class="linkbtn" id="gEnd">提早結算</button></div>
+        <div class="table sim-table" id="gTable">
+          <div class="dseat"><div class="hand ov" id="gDealer"></div><div class="total" id="gDTotal"></div></div>
+          <div class="arc" id="gArc"></div>
+          <div class="phands" id="gHands"></div>
+        </div>
+        <div class="sim-ctrl" id="gCtrl"></div>
+      </div>
+      <div class="sim-scroll" id="simSum" hidden></div>
+    </div>
   </section>
 
   <!-- STATS -->
@@ -257,6 +337,7 @@ table.chart{border-collapse:collapse;width:100%;font-family:var(--f-mono);font-s
       <button data-per="month" aria-pressed="false">本月</button>
       <button data-per="all" aria-pressed="false">全部</button>
     </div>
+    <div class="chips" id="srcs"><button class="chip" data-src="all" aria-pressed="true">全部來源</button><button class="chip" data-src="quiz" aria-pressed="false">題目練習</button><button class="chip" data-src="table" aria-pressed="false">牌桌模擬</button></div>
     <div id="statsBody"></div>
   </section>
 
@@ -459,6 +540,133 @@ function decide(engine,rules,kind,x,up){
 }
 function pick(ev,exclude){ let best=null; for(const k of ['S','H','D','P','R']){ if(ev[k]===undefined||(exclude&&exclude.includes(k)))continue; if(best===null||ev[k]>ev[best]+1e-12)best=k;} return best;}
 
+// Table simulation core: shoe, one round of play, settlement. Pure logic, no DOM.
+// Cards are {r,s}; values use A=11. Rules: {decks,h17,hole:'peek'|'obo'|'galaxy'|'enhc',surr:'none'|'noAce'|'all',dbl,das}
+const SIM=(function(){
+  const RANKS=['A','2','3','4','5','6','7','8','9','10','J','Q','K'],SUITS=['♠','♥','♦','♣'];
+  const cv=r=>r==='A'?11:(['10','J','Q','K'].includes(r)?10:+r);
+  function newShoe(decks,rng){rng=rng||Math.random;const c=[];
+    for(let d=0;d<decks;d++)for(const s of SUITS)for(const r of RANKS)c.push({r,s});
+    for(let i=c.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));const t=c[i];c[i]=c[j];c[j]=t;}
+    return {cards:c,pos:0,cut:Math.floor(c.length*0.75)};}
+  function total(cards){let t=0,a=0;for(const c of cards){const v=cv(c.r);t+=v;if(v===11)a++;}
+    while(t>21&&a){t-=10;a--;}return {t,soft:a>0};}
+  const noHole=s=>s.rules.hole!=='peek';
+  const upVal=s=>cv(s.d[0].r);
+  const dealerBJ=s=>s.d.length===2&&total(s.d).t===21;
+  function mkHand(bet,split){return {cards:[],bet,base:bet,split:!!split,splitAces:false,doubled:false,done:false,bust:false,surr:false,nat:false,res:null,net:0};}
+  function draw(s){const c=s.cards[s.pos%s.cards.length];s.pos++;return c;}
+  const committed=s=>s.hands.reduce((a,h)=>a+h.bet,0)+(s.ins||0);
+  const free=s=>s.avail-committed(s);
+  function canDblTotal(t,r){return r.dbl==='any'||(r.dbl==='9-11'?t>=9&&t<=11:t>=10&&t<=11);}
+  function surrOK(s){const r=s.rules.surr;return r==='all'||(r==='noAce'&&upVal(s)!==11);}
+
+  // Deal a round from cards[pos...]. avail = chips available to the player before betting.
+  function start(cards,pos,bet,avail,rules){
+    const s={cards,pos,pos0:pos,rules,base:bet,avail,hands:[mkHand(bet)],d:[],ins:0,idx:0,phase:'',peekBJ:false,net:0,insNet:0};
+    const h=s.hands[0];
+    h.cards.push(draw(s));s.d.push(draw(s));h.cards.push(draw(s));
+    if(!noHole(s))s.d.push(draw(s));
+    h.nat=total(h.cards).t===21;
+    if(upVal(s)===11&&free(s)>=bet/2){s.phase='ins';return s;}
+    afterIns(s);return s;}
+  function afterIns(s){
+    const h=s.hands[0];
+    if(!noHole(s)&&(upVal(s)===11||upVal(s)===10)&&dealerBJ(s)){s.peekBJ=true;finish(s);return;}
+    if(h.nat){h.done=true;toDealer(s);return;}
+    s.phase='play';s.idx=0;advance(s);}
+  function allowed(s,h){
+    const t=total(h.cards).t,two=h.cards.length===2,initial=two&&!h.split&&s.hands.length===1;
+    const a=['H','S'];
+    if(two&&(initial||s.rules.das)&&canDblTotal(t,s.rules)&&free(s)>=h.bet)a.push('D');
+    if(two&&h.cards[0].r===h.cards[1].r&&s.hands.length<4&&!(h.split&&cv(h.cards[0].r)===11)&&free(s)>=s.base)a.push('P');
+    if(initial&&surrOK(s))a.push('R');
+    return a;}
+  function pending(s){
+    if(s.phase==='ins')return {type:'ins',even:s.hands[0].nat};
+    if(s.phase!=='play')return null;
+    const h=s.hands[s.idx];return {type:'act',idx:s.idx,hand:h,allowed:allowed(s,h),initial:h.cards.length===2&&!h.split&&s.hands.length===1};}
+  function act(s,a){
+    if(s.phase==='ins'){if(a==='Y')s.ins=s.base/2;s.phase='';afterIns(s);return;}
+    const h=s.hands[s.idx];
+    if(a==='H'){h.cards.push(draw(s));const t=total(h.cards).t;if(t>21){h.bust=true;h.done=true;}else if(t===21)h.done=true;}
+    else if(a==='S'){h.done=true;}
+    else if(a==='D'){h.bet*=2;h.doubled=true;h.cards.push(draw(s));h.done=true;if(total(h.cards).t>21)h.bust=true;}
+    else if(a==='R'){h.surr=true;h.done=true;}
+    else if(a==='P'){const c=h.cards.pop(),nh=mkHand(s.base,true);nh.cards.push(c);h.split=true;
+      const aces=cv(c.r)===11;h.splitAces=aces;nh.splitAces=aces;
+      s.hands.splice(s.idx+1,0,nh);h.cards.push(draw(s));
+      if(aces||total(h.cards).t===21)h.done=true;}
+    advance(s);}
+  function advance(s){
+    while(s.idx<s.hands.length){const h=s.hands[s.idx];
+      if(h.cards.length===1){h.cards.push(draw(s));if(h.splitAces||total(h.cards).t===21)h.done=true;}
+      if(!h.done)return;
+      s.idx++;}
+    toDealer(s);}
+  function toDealer(s){
+    s.phase='dealer';
+    if(noHole(s))s.d.push(draw(s));
+    const live=s.hands.some(h=>!h.bust&&!h.surr&&!h.nat);
+    if(live&&!dealerBJ(s)){for(;;){const {t,soft}=total(s.d);if(t<17||(t===17&&soft&&s.rules.h17))s.d.push(draw(s));else break;}}
+    finish(s);}
+  function finish(s){
+    s.phase='done';
+    const bj=dealerBJ(s),dt=total(s.d).t,mode=s.rules.hole;
+    if(s.ins)s.insNet=bj?s.ins*2:-s.ins;
+    const h0=s.hands[0];
+    if(bj){
+      if(s.hands.length===1&&h0.nat){h0.res='push';h0.net=0;}
+      else if(s.hands.length===1&&h0.surr){h0.res='surr';h0.net=-s.base/2;}
+      else if(s.peekBJ){h0.res='dbj';h0.net=-s.base;}
+      else s.hands.forEach((h,i)=>{
+        // no hole card: what a dealer blackjack takes depends on the table's rule
+        const loss=mode==='enhc'?h.bet:mode==='galaxy'?h.base:(i===0?s.base:0);
+        h.res='dbj';h.net=-loss;});
+    }else s.hands.forEach(h=>{
+      if(h.surr){h.res='surr';h.net=-h.bet/2;}
+      else if(h.nat){h.res='bj';h.net=h.bet*1.5;}
+      else if(h.bust){h.res='bust';h.net=-h.bet;}
+      else{const pt=total(h.cards).t;
+        if(dt>21||pt>dt){h.res='win';h.net=h.bet;}else if(pt<dt){h.res='lose';h.net=-h.bet;}else{h.res='push';h.net=0;}}});
+    s.net=s.insNet+s.hands.reduce((a,h)=>a+h.net,0);}
+  // Play a whole round with a policy(s,pending) -> action. Used for the same-cards optimal replay.
+  function runAuto(cards,pos,bet,avail,rules,policy){
+    const s=start(cards,pos,bet,avail,rules);let p,guard=0;
+    while((p=pending(s))&&guard++<60)act(s,policy(s,p));
+    return s;}
+  return {newShoe,total,cv,start,pending,act,runAuto,dealerBJ,noHole};
+})();
+
+
+// Decision judge for the table mode: EV of each allowed action, using the same engine as the chart.
+function makeJudge(rules){
+  const E=makeEngine(rules),cache={};
+  const ei=v=>v===11?1:v;
+  function cat(cards){
+    const two=cards.length===2,v0=SIM.cv(cards[0].r),v1=two?SIM.cv(cards[1].r):0;
+    if(two&&cards[0].r===cards[1].r)return {type:'pair',v:v0};
+    const {t,soft}=SIM.total(cards);
+    if(soft)return {type:'soft',x:t-11};
+    if(t>=20)return {type:'pair',v:10,as:t};   // 3+ card hard 20: only hit/stand matter
+    return {type:'hard',t};}
+  function evCat(c,u){const x=c.type==='pair'?ei(c.v):c.type==='soft'?c.x:c.t;const k=c.type+x+'v'+u;
+    return cache[k]||(cache[k]=decide(E,rules,c.type,x,ei(u)));}
+  function judge(s,p){
+    const u=SIM.cv(s.d[0].r);
+    if(p.type==='ins'){
+      const rem=s.hands[0].cards.map(c=>ei(SIM.cv(c.r))).concat([1]);
+      const q=E.bjProb(1,E.shoeFor(rem)),ins=s.base/2;
+      return {type:'ins',ev:{Y:ins*(3*q-1),N:0},best:'N',q,unit:1,u};}
+    const c=cat(p.hand.cards),full=evCat(c,u),ev={};
+    p.allowed.forEach(a=>{if(full[a]!==undefined)ev[a]=full[a];});
+    let best=null;for(const a of ['S','H','D','P','R'])if(ev[a]!==undefined&&(best===null||ev[a]>ev[best]+1e-12))best=a;
+    return {type:'act',ev,best,cat:c,u,unit:p.hand.bet};}
+  const policy=(s,p)=>p.type==='ins'?'N':judge(s,p).best;
+  return {judge,policy,E};
+}
+
+
 </script>
 <script>
 (function(){
@@ -483,7 +691,9 @@ rebuildEngine();
 const UPS=[2,3,4,5,6,7,8,9,10,11];
 const ei=v=>v===11?1:v, upName=u=>u===11?'A':String(u);
 function evFor(h,u){const kind=h.type,x=kind==='pair'?ei(h.v):kind==='soft'?h.x:h.t;
-  const k=kind+x+'v'+u;if(cache[k])return cache[k];return cache[k]=decide(E,rules,kind,x,ei(u));}
+  const k=kind+x+'v'+u;if(cache[k])return cache[k];
+  if(kind==='hard'&&x>=20){const ev=Object.assign({},decide(E,rules,'pair',10,ei(u)));delete ev.P;return cache[k]=ev;}   // e.g. 10,J: hard 20, not a pair
+  return cache[k]=decide(E,rules,kind,x,ei(u));}
 function cellCode(ev){const b=pick(ev);if(b==='D')return pick(ev,['D','R','P'])==='S'?'Ds':'D';return b;}
 let bustCache={};
 const bust=u=>{const k=JSON.stringify(rules)+u;if(bustCache[k]===undefined)bustCache[k]=Math.round(E.bustProb(ei(u))*100);return bustCache[k];};
@@ -533,18 +743,18 @@ const val=r=>r==='A'?11:(['10','J','Q','K'].includes(r)?10:+r);
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const card=r=>({r,s:rnd(SUITS)});
 const rankOf=v=>v===11?'A':v===10?rnd(['10','J','Q','K']):String(v);
-function classify(c1,c2){const a=val(c1.r),b=val(c2.r);if(a===b)return{type:'pair',v:a};if(a===11||b===11)return{type:'soft',x:a===11?b:a};return{type:'hard',t:a+b};}
+function classify(c1,c2){const a=val(c1.r),b=val(c2.r);if(c1.r===c2.r)return{type:'pair',v:a};if(a===11||b===11)return{type:'soft',x:a===11?b:a};return{type:'hard',t:a+b};}
 function keyOf(h,u){return(h.type==='pair'?'P'+h.v:h.type==='soft'?'A'+h.x:'H'+h.t)+'v'+u;}
 function parseKey(k){const m=k.match(/^([PAH])(\d+)v(\d+)$/);return m?{t:m[1],n:+m[2],u:+m[3]}:null;}
 function keyLabel(k){const p=parseKey(k);if(!p)return k;
   const hand=p.t==='P'?'一對 '+(p.n===11?'A':p.n):p.t==='A'?'A,'+p.n+'（軟 '+(11+p.n)+'）':'硬 '+p.n;return hand+' 對 莊家 '+upName(p.u);}
 function genHand(m){
-  if(m==='pair'){const v=rnd([2,3,4,5,6,7,8,9,10,11]);return[card(rankOf(v)),card(rankOf(v))];}
+  if(m==='pair'){const r=rankOf(rnd([2,3,4,5,6,7,8,9,10,11]));return[card(r),card(r)];}
   if(m==='soft'){const x=rnd([2,3,4,5,6,7,8,9]);const cs=[card('A'),card(rankOf(x))];return Math.random()<.5?cs:cs.reverse();}
   if(m==='hard'){let a,b;do{a=rnd([2,3,4,5,6,7,8,9,10]);b=rnd([2,3,4,5,6,7,8,9,10]);}while(a===b);return[card(rankOf(a)),card(rankOf(b))];}
   let c1,c2;do{c1=card(rnd(RANKS));c2=card(rnd(RANKS));}while(val(c1.r)+val(c2.r)===21);return[c1,c2];}
 function fromKey(k){const p=parseKey(k);let cs;
-  if(p.t==='P')cs=[card(rankOf(p.n)),card(rankOf(p.n))];
+  if(p.t==='P'){const r=rankOf(p.n);cs=[card(r),card(r)];}
   else if(p.t==='A')cs=[card('A'),card(rankOf(p.n))];
   else{const o=[];for(let x=2;x<=10;x++){const y=p.n-x;if(y>=2&&y<=10&&x!==y)o.push([x,y]);}const[a,b]=o.length?rnd(o):[2,p.n-2];cs=[card(rankOf(a)),card(rankOf(b))];}
   return{cs,u:p.u};}
@@ -566,7 +776,7 @@ function renderHand(){
   $('#dealer').innerHTML=cardHTML(cur.up);
   $('#player').innerHTML=cur.cs.map(cardHTML).join('');
   $('#ptotal').textContent=totalText(cur.h);
-  document.querySelectorAll('.act').forEach(b=>{b.classList.remove('pick-ok','pick-bad','answer');b.disabled=cur.ev[b.dataset.a]===undefined;});
+  document.querySelectorAll('#quiz .act').forEach(b=>{b.classList.remove('pick-ok','pick-bad','answer');b.disabled=cur.ev[b.dataset.a]===undefined;});
   markChart();}
 function choose(a){
   if(!cur||answered||cur.ev[a]===undefined)return;answered=true;
@@ -577,8 +787,8 @@ function choose(a){
   if(log.length>LOG_MAX)log=log.slice(-LOG_MAX);
   store.set('bj.stats',stats);store.set('bj.log',log);
   updTop();
-  document.querySelector(`.act[data-a="${a}"]`).classList.add(ok?'pick-ok':'pick-bad');
-  if(!ok)document.querySelector(`.act[data-a="${cur.ans}"]`).classList.add('answer');
+  document.querySelector(`#quiz .act[data-a="${a}"]`).classList.add(ok?'pick-ok':'pick-bad');
+  if(!ok)document.querySelector(`#quiz .act[data-a="${cur.ans}"]`).classList.add('answer');
   let note='';
   if(cur.ans==='D'){let f=pick(cur.ev,['D','R']);if(f==='P')f=pick(cur.ev,['D','R','P']);note=`<p class="hint">如果不能加倍（例如已拿三張牌），這手應該${NAME[f]}。</p>`;}
   const loss=ok?'':`<p class="hint">選${NAME[a]}平均每手比最佳做法多輸 ${((cur.ev[cur.ans]-cur.ev[a])*100).toFixed(1)}% 注碼。</p>`;
@@ -625,12 +835,12 @@ function periodRange(per){const now=Date.now();
   if(per==='week'){const s=weekStart(now);const e=new Date(s);e.setDate(e.getDate()+7);const p=new Date(s);p.setDate(p.getDate()-7);return{s,e:e.getTime(),ps:p.getTime(),prevName:'上週'};}
   if(per==='month'){const s=monthStart(now);const e=new Date(s);e.setMonth(e.getMonth()+1);const p=new Date(s);p.setMonth(p.getMonth()-1);return{s,e:e.getTime(),ps:p.getTime(),prevName:'上月'};}
   return{s:0,e:Infinity,ps:null,prevName:null};}
-function buckets(per,rng){const out=[];
+function buckets(per,rng,L){const out=[];L=L||log;
   if(per==='day'){for(let h=0;h<24;h++)out.push({s:rng.s+h*36e5,e:rng.s+(h+1)*36e5,lab:h%6===0?h+'時':''});return out;}
   if(per==='week'){const n=['一','二','三','四','五','六','日'];for(let i=0;i<7;i++){const s=new Date(rng.s);s.setDate(s.getDate()+i);const e=new Date(s);e.setDate(e.getDate()+1);out.push({s:s.getTime(),e:e.getTime(),lab:'週'+n[i]});}return out;}
   if(per==='month'){const s0=new Date(rng.s);let d=new Date(s0);while(d.getTime()<rng.e){const e=new Date(d);e.setDate(e.getDate()+1);const day=d.getDate();out.push({s:d.getTime(),e:e.getTime(),lab:(day===1||day%5===0)?day+'日':''});d=e;}return out;}
-  if(!log.length)return out;
-  const first=weekStart(log[0].t),now=Date.now();let w=new Date(first);
+  if(!L.length)return out;
+  const first=weekStart(L[0].t),now=Date.now();let w=new Date(first);
   const weeks=[];while(w.getTime()<=now){const e=new Date(w);e.setDate(e.getDate()+7);weeks.push({s:w.getTime(),e:e.getTime()});w=e;}
   const step=Math.ceil(weeks.length/26);
   for(let i=0;i<weeks.length;i+=step){const s=weeks[i].s,e=weeks[Math.min(i+step,weeks.length)-1].e;const dt=new Date(s);out.push({s,e,lab:`${dt.getMonth()+1}/${dt.getDate()}`});}
@@ -652,15 +862,17 @@ function gbars(groups,order,labeler){
   return '<div class="gbars">'+order.filter(k=>groups[k]).map(k=>{const a=agg(groups[k]);
     return `<div class="gbar ${lvl(a.p)}"><span>${labeler(k)}</span><span class="bar"><i style="width:${a.p}%"></i></span><b>${a.p}% <small>${a.ok}/${a.n}</small></b></div>`;}).join('')+'</div>';}
 const TYPE_NAME={H:'硬牌',A:'軟牌',P:'對子'};
+let srcSel='all';
 function renderStats(){
   const rng=periodRange(period);
-  const arr=log.filter(e=>e.t>=rng.s&&e.t<rng.e);
+  const L=srcSel==='all'?log:log.filter(e=>(e.src||'quiz')===srcSel);
+  const arr=L.filter(e=>e.t>=rng.s&&e.t<rng.e);
   const per={day:'今日',week:'本週',month:'本月',all:'全部'}[period];
-  if(!arr.length){$('#statsBody').innerHTML=`<div class="box"><div class="empty"><b>${per}還沒有練習紀錄</b>${log.length?'切換到其他時段查看，或者去練習幾手。':'完成練習後，這裡會按今日、本週、本月和全部，分析你的正確率、強項、弱項和常犯錯誤。'}</div></div>`;return;}
+  if(!arr.length){$('#statsBody').innerHTML=`<div class="box"><div class="empty"><b>${per}還沒有${srcSel==='table'?'牌桌模擬的':srcSel==='quiz'?'題目練習的':''}紀錄</b>${L.length?'切換到其他時段查看，或者去練習幾手。':'完成練習後，這裡會按今日、本週、本月和全部，分析你的正確率、強項、弱項和常犯錯誤。'}</div></div>`;return;}
   const a=agg(arr);
-  let cmp='';if(rng.ps!==null){const prev=agg(log.filter(e=>e.t>=rng.ps&&e.t<rng.s));
+  let cmp='';if(rng.ps!==null){const prev=agg(L.filter(e=>e.t>=rng.ps&&e.t<rng.s));
     if(prev.n){const d=a.p-prev.p;cmp=`<em class="${d>0?'up':d<0?'down':'flat'}">${d>0?'▲':d<0?'▼':'＝'} ${Math.abs(d)}% 比${rng.prevName}</em>`;}else cmp=`<em class="flat">${rng.prevName}沒有紀錄</em>`;}
-  const cnt=rng.ps!==null?(()=>{const n=log.filter(e=>e.t>=rng.ps&&e.t<rng.s).length;return n?`<em class="flat">${rng.prevName} ${n} 手</em>`:'';})():`<em class="flat">${new Set(arr.map(e=>dayStart(e.t))).size} 天有練習</em>`;
+  const cnt=rng.ps!==null?(()=>{const n=L.filter(e=>e.t>=rng.ps&&e.t<rng.s).length;return n?`<em class="flat">${rng.prevName} ${n} 手</em>`:'';})():`<em class="flat">${new Set(arr.map(e=>dayStart(e.t))).size} 天有練習</em>`;
   // best streak in period
   let st=0,bs=0;arr.forEach(e=>{st=e.ok?st+1:0;bs=Math.max(bs,st);});
   const byType=groupBy(arr,e=>e.k[0]);
@@ -681,7 +893,7 @@ function renderStats(){
     <div><b>${a.n}</b><span>答題數</span>${cnt}</div>
     <div><b>${a.n-a.ok}</b><span>答錯</span><em class="flat">最高連勝 ${bs}</em></div>
   </div>
-  <div class="box trend"><div class="label">${{day:'今日每小時',week:'本週每日',month:'本月每日',all:'全部・按週'}[period]}命中率（線）與答題數（柱）</div>${trendSVG(buckets(period,rng),arr)}</div>
+  <div class="box trend"><div class="label">${{day:'今日每小時',week:'本週每日',month:'本月每日',all:'全部・按週'}[period]}命中率（線）與答題數（柱）</div>${trendSVG(buckets(period,rng,L),arr)}</div>
   <div class="sw"><div class="s"><h3>強項</h3>${li(strong)}</div><div class="w"><h3>弱項</h3>${li(weak)}</div></div>
   <div class="box"><h2>按題型</h2>${gbars(byType,['H','A','P'],k=>TYPE_NAME[k])}</div>
   <div class="box"><h2>按莊家明牌</h2>${gbars(byUp,UPS.map(String),k=>'明牌 '+upName(+k))}</div>
@@ -703,12 +915,12 @@ function drawCharts(){const job=++chartJob;
   $('#chartRules').textContent='目前規則：'+rulesText(true)+'。';}
 function markChart(){document.querySelectorAll('.chart td.hl').forEach(t=>t.classList.remove('hl'));if(!cur)return;
   const k=cur.key.replace(/^H(1[89]|20)v/,'H17v').replace(/^H[4-7]v/,'H8v');const td=document.querySelector(`td[data-k="${k}"]`);if(td)td.classList.add('hl');}
-function rulesText(long){
-  const hole={obo:'莊家不拿暗牌，遇黑傑克只輸原注',galaxy:'莊家不拿暗牌，遇黑傑克分牌全輸、加倍只輸原注',enhc:'莊家不拿暗牌，遇黑傑克加倍分牌全輸',peek:'莊家先查看暗牌'}[rules.hole];
-  const surr={noAce:'可投降（明牌 A 除外）',all:'可投降',none:'不可投降'}[rules.surr];
-  const dbl={any:'任何兩張可加倍','9-11':'只限 9–11 加倍','10-11':'只限 10–11 加倍'}[rules.dbl];
-  if(!long)return`${rules.decks} 副牌 · ${rules.h17?'軟17要牌':'17點停牌'} · ${rules.hole==='peek'?'莊家查暗牌':'不拿暗牌'} · ${surr}`;
-  return`${rules.decks} 副牌，${rules.h17?'莊家軟17要牌':'莊家所有17點停牌'}，${hole}，${surr}，${dbl}，${rules.das?'分牌後可加倍':'分牌後不可加倍'}`;}
+function rulesText(long,r){r=r||rules;
+  const hole={obo:'莊家不拿暗牌，遇黑傑克只輸原注',galaxy:'莊家不拿暗牌，遇黑傑克分牌全輸、加倍只輸原注',enhc:'莊家不拿暗牌，遇黑傑克加倍分牌全輸',peek:'莊家先查看暗牌'}[r.hole];
+  const surr={noAce:'可投降（明牌 A 除外）',all:'可投降',none:'不可投降'}[r.surr];
+  const dbl={any:'任何兩張可加倍','9-11':'只限 9–11 加倍','10-11':'只限 10–11 加倍'}[r.dbl];
+  if(!long)return`${r.decks} 副牌 · ${r.h17?'軟17要牌':'17點停牌'} · ${r.hole==='peek'?'莊家查暗牌':'不拿暗牌'} · ${surr}`;
+  return`${r.decks} 副牌，${r.h17?'莊家軟17要牌':'莊家所有17點停牌'}，${hole}，${surr}，${dbl}，${r.das?'分牌後可加倍':'分牌後不可加倍'}`;}
 
 // ---- settings ----
 function syncControls(){
@@ -730,15 +942,16 @@ function show(s){screen=s;
   document.body.classList.toggle('playing',s==='play');measureNav();
   document.querySelectorAll('nav.bar button').forEach(b=>{if(b.dataset.s===s)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
   ['home','play','stats','chart','rules'].forEach(x=>$('#s-'+x).hidden=x!==s);
-  if(s==='home')renderHome();if(s==='stats')renderStats();if(s==='rules')renderLogInfo();
+  if(s==='home')renderHome();if(s==='stats')renderStats();if(s==='play'&&playMode==='table')renderSim();if(s==='rules')renderLogInfo();
   try{window.scrollTo(0,0)}catch(e){}}
 document.querySelectorAll('nav.bar button').forEach(b=>b.onclick=()=>show(b.dataset.s));
 function setMode(m){mode=m;document.querySelectorAll('#modes .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.m===m));deal();}
 $('#goPlay').onclick=()=>{show('play');};
 $('#goWeak').onclick=()=>{setMode('weak');show('play');};
 document.querySelectorAll('#modes .chip').forEach(c=>c.onclick=()=>setMode(c.dataset.m));
+document.querySelectorAll('#srcs .chip').forEach(c=>c.onclick=()=>{srcSel=c.dataset.src;document.querySelectorAll('#srcs .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));renderStats();});
 document.querySelectorAll('#periods button').forEach(b=>b.onclick=()=>{period=b.dataset.per;document.querySelectorAll('#periods button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderStats();});
-document.querySelectorAll('.act').forEach(b=>b.onclick=()=>choose(b.dataset.a));
+document.querySelectorAll('#quiz .act').forEach(b=>b.onclick=()=>choose(b.dataset.a));
 document.querySelectorAll('#presets .chip').forEach(c=>c.onclick=()=>{const p=PRESETS[c.dataset.pre];if(!p)return;Object.assign(rules,p);rulesChanged();});
 $('#rDecks').onchange=e=>{rules.decks=+e.target.value;rulesChanged();};
 $('#rHole').onchange=e=>{rules.hole=e.target.value;rulesChanged();};
@@ -753,7 +966,242 @@ function bindReset(){$('#reset').onclick=()=>{$('#resetArea').innerHTML='<div cl
 function restoreReset(){$('#resetArea').innerHTML='<button class="reset" id="reset">清除全部練習紀錄</button>';bindReset();}
 bindReset();
 document.addEventListener('keydown',e=>{if(screen!=='play'||e.target.tagName==='SELECT')return;const m={h:'H',s:'S',d:'D',p:'P',r:'R'}[e.key.toLowerCase()];
+  if(playMode==='table'){if(m)simChoose(m);return;}
   if(m)choose(m);if((e.key==='Enter'||e.key===' ')&&answered&&e.target===document.body){e.preventDefault();deal();}});
+// ===== 牌桌模擬 (table simulation UI) =====
+const CHIPV=[100,500,1000,5000];
+let sess=store.get('bj.sim',null);           // in-progress game, saved between hands
+let simHist=store.get('bj.simHist',[]);
+let simCfg=Object.assign({start:10000,min:300,n:50},store.get('bj.simCfg',{}));
+let playMode=store.get('bj.playMode','quiz');
+let simSeen=new WeakSet(),simBackSeen=false;
+// only newly dealt cards play the deal animation
+function simCard(c){const fx=!simSeen.has(c);simSeen.add(c);return fx?cardHTML(c):cardHTML(c).replace('class="card','class="card still');}
+let simJ=null,simRound=null,simBusy=false,simView='setup',simReveal=99,simBet=0,lastSum=null,simMsg='';
+const money=n=>(n<0?'−':'')+'HK$'+Math.abs(Math.round(n)).toLocaleString('en-US');
+const smoney=n=>(n>0?'+':n<0?'−':'')+'HK$'+Math.abs(Math.round(n)).toLocaleString('en-US');
+const RES={win:['贏','w'],lose:['輸','l'],push:['和局','p'],bust:['爆牌','l'],bj:['黑傑克','w'],surr:['投降','l'],dbj:['莊家黑傑克','l']};
+const miniCards=cs=>cs.map(c=>`<span class="mc${c.s==='♥'||c.s==='♦'?' red':''}">${c.r}${c.s}</span>`).join('');
+function saveSess(){store.set('bj.sim',sess);}
+function handLabel(cards){const {t,soft}=SIM.total(cards);
+  if(cards.length===2&&t===21)return '21';if(t>21)return '爆 '+t;return (soft&&t<21?'軟 ':'')+t;}
+
+function setPlayMode(m){playMode=m;store.set('bj.playMode',m);
+  document.querySelectorAll('#playModes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pm===m));
+  $('#quiz').hidden=m!=='quiz';$('#sim').hidden=m!=='table';
+  if(m==='table')renderSim();}
+
+function startSession(){
+  simCfg={start:+$('#sStart').value,min:+$('#sMin').value,n:simCfg.n};store.set('bj.simCfg',simCfg);
+  const r={};RKEYS.forEach(k=>r[k]=rules[k]);
+  sess={t0:Date.now(),rules:r,preset:presetName(),start:simCfg.start,chips:simCfg.start,min:simCfg.min,n:simCfg.n,round:0,
+    shoe:SIM.newShoe(r.decks),lastBet:simCfg.min,decs:[],rounds:[]};
+  simJ=makeJudge(sess.rules);simBet=sess.lastBet;simRound=null;simMsg='新牌靴已洗好';simView='bet';saveSess();renderSim();}
+function resumeSession(){simJ=makeJudge(sess.rules);simBet=Math.min(sess.lastBet,sess.chips);simRound=null;simMsg='';simView='bet';renderSim();}
+
+function simDeal(){
+  if(simBusy||simView!=='bet')return;
+  if(simBet<sess.min||simBet>sess.chips)return;
+  if(sess.shoe.pos>=sess.shoe.cut){sess.shoe=SIM.newShoe(sess.rules.decks);simMsg='已重新洗牌';}else simMsg='';
+  sess.lastBet=simBet;
+  simRound=SIM.start(sess.shoe.cards,sess.shoe.pos,simBet,sess.chips,sess.rules);
+  simRound.avail0=sess.chips;simRound.no=sess.round+1;
+  simView='play';simReveal=99;simBackSeen=false;
+  if(!SIM.pending(simRound))simEndRound();else renderSim();}
+
+function simChoose(a){
+  if(simBusy||simView!=='play'||!simRound)return;
+  const p=SIM.pending(simRound);if(!p)return;
+  const opts=p.type==='ins'?['Y','N']:p.allowed;if(!opts.includes(a))return;
+  const j=simJ.judge(simRound,p);
+  const loss=Math.max(0,(j.ev[j.best]-j.ev[a])*j.unit);
+  const h=p.type==='act'?p.hand:simRound.hands[0];
+  sess.decs.push({r:simRound.no,type:p.type,even:!!p.even,cards:h.cards.slice(),up:simRound.d[0],split:!!h.split,
+    chosen:a,best:j.best,loss,ok:loss<1e-9,ev:j.ev,cat:j.cat||null,u:j.u,q:j.q||0});
+  if(p.type==='act'&&p.initial){   // first two cards: same situation as the chart, so it also counts in 分析
+    const k=keyOf(classify(h.cards[0],h.cards[1]),SIM.cv(simRound.d[0].r)),ok=loss<1e-9;
+    log.push({t:Date.now(),k,a,c:j.best,ok:ok?1:0,p:sess.preset,src:'table'});
+    if(log.length>LOG_MAX)log=log.slice(-LOG_MAX);
+    if(ok){if(stats.miss[k]){stats.miss[k]--;if(!stats.miss[k])delete stats.miss[k];}}
+    else stats.miss[k]=Math.min((stats.miss[k]||0)+2,6);
+    store.set('bj.log',log);store.set('bj.stats',stats);updTop();}
+  SIM.act(simRound,a);
+  if(!SIM.pending(simRound))simEndRound();else renderSim();}
+
+function simEndRound(){
+  const s=simRound;
+  const opt=SIM.runAuto(s.cards,s.pos0,s.base,s.avail0,sess.rules,simJ.policy).net;   // same cards, best play
+  sess.chips+=s.net;sess.shoe.pos=s.pos;sess.round++;
+  sess.rounds.push({r:s.no,bet:s.base,net:s.net,opt,res:s.hands.map(h=>h.res)});
+  saveSess();
+  simView='result';
+  // reveal the dealer's cards one by one
+  simReveal=1;simBusy=true;renderSim();
+  const step=()=>{if(simReveal<s.d.length){simReveal++;renderSim();setTimeout(step,420);}else{simBusy=false;simReveal=99;renderSim();}};
+  setTimeout(step,s.d.length>1?380:0);}
+
+function simNext(){if(simBusy)return;
+  if(sess.round>=sess.n||sess.chips<sess.min){simSummary();return;}
+  simRound=null;simBet=Math.min(sess.lastBet,sess.chips);if(simBet<sess.min)simBet=sess.min;simView='bet';renderSim();}
+
+function simSummary(){
+  if(!sess)return;
+  const d=sess.decs,ok=d.filter(x=>x.ok).length,loss=d.reduce((a,x)=>a+x.loss,0);
+  const net=sess.rounds.reduce((a,x)=>a+x.net,0),opt=sess.rounds.reduce((a,x)=>a+x.opt,0);
+  const cnt={};sess.rounds.forEach(r=>r.res.forEach(x=>cnt[x]=(cnt[x]||0)+1));
+  lastSum={t:Date.now(),n:sess.round,planned:sess.n,start:sess.start,end:sess.chips,net,opt,dec:d.length,ok,loss,cnt,
+    decs:d.filter(x=>!x.ok),rules:sess.rules,preset:sess.preset,broke:sess.chips<sess.min&&sess.round<sess.n};
+  if(sess.round>0){simHist.push({t:lastSum.t,n:lastSum.n,start:lastSum.start,end:lastSum.end,net,opt,dec:d.length,ok,loss,preset:sess.preset});
+    if(simHist.length>60)simHist=simHist.slice(-60);store.set('bj.simHist',simHist);}
+  sess=null;store.set('bj.sim',null);simRound=null;simView='summary';renderSim();}
+
+// ---- rendering ----
+function renderSim(){
+  $('#simSetup').hidden=simView!=='setup';$('#simGame').hidden=!['bet','play','result'].includes(simView);$('#simSum').hidden=simView!=='summary';
+  if(simView==='setup')renderSetup();
+  else if(simView==='summary')renderSummary();
+  else renderGame();}
+
+function renderSetup(){
+  const opt=(v,cur)=>`<option value="${v}"${v===cur?' selected':''}>${money(v)}</option>`;
+  const resume=sess?`<div class="resume"><div><b>未完成的牌局</b><span>第 ${sess.round} / ${sess.n} 手 · 籌碼 ${money(sess.chips)}</span></div><button class="btn" id="sResume">繼續</button></div>`:'';
+  const hist=simHist.slice(-8).reverse();
+  $('#simSetup').innerHTML=`
+  <div class="box">
+    <h2>牌桌模擬</h2>
+    <p class="muted">用你在「規則」頁的設定（${PRESET_NAME[presetName()]}）打完整的牌局。過程中不會提示對錯，打完後結算時才顯示每個決定與最佳行動的差別。</p>
+    ${resume}
+    <label class="row" for="sStart"><div><b>起始籌碼</b></div><select id="sStart">${[5000,10000,20000,50000].map(v=>opt(v,simCfg.start)).join('')}</select></label>
+    <label class="row" for="sMin"><div><b>最低注</b></div><select id="sMin">${[100,300,500,1000].map(v=>opt(v,simCfg.min)).join('')}</select></label>
+    <div class="row"><div><b>手數</b><span>打完即結算</span></div><div class="chips" id="sN">${[20,50,100].map(n=>`<button class="chip" data-n="${n}" aria-pressed="${n===simCfg.n}">${n} 手</button>`).join('')}</div></div>
+    <button class="btn" id="sGo">${sess?'放棄未完成的牌局，開新局':'開始牌局'}</button>
+  </div>
+  <div class="box"><h2>過往牌局</h2>${hist.length?'<div class="hist">'+hist.map(h=>{const dt=new Date(h.t);const acc=h.dec?Math.round(h.ok*100/h.dec):100;
+    return `<div class="hrow"><span class="hd">${dt.getMonth()+1}/${dt.getDate()} ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')}<small>${h.n} 手</small></span>
+    <span class="hn ${h.net>0?'up':h.net<0?'down':'flat'}">${smoney(h.net)}</span><span class="ha">正確 ${acc}%</span><span class="hl">損失 ${money(h.loss)}</span></div>`;}).join('')+'</div>'
+    :'<p class="muted">還沒有完成的牌局。</p>'}</div>`;
+  if(sess)$('#sResume').onclick=resumeSession;
+  $('#sGo').onclick=startSession;
+  document.querySelectorAll('#sN .chip').forEach(c=>c.onclick=()=>{simCfg.n=+c.dataset.n;document.querySelectorAll('#sN .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));});}
+
+function renderGame(){
+  const s=simRound,R=sess?sess.rules:rules;
+  $('#gRound').textContent=sess?(simView==='result'?sess.round:Math.min(sess.round+1,sess.n)):'';
+  $('#gN').textContent=sess?sess.n:'';
+  $('#gChips').textContent=money(sess?sess.chips-(simView==='play'&&s?s.hands.reduce((a,h)=>a+h.bet,0)+(s.ins||0):0):0);
+  $('#gEnd').disabled=simView!=='bet';
+  $('#gArc').textContent=simMsg||rulesText(false,R);
+  // dealer
+  let dh='',dl='';
+  if(s){const vis=s.d.slice(0,Math.min(simReveal,s.d.length));
+    dh=vis.map(simCard).join('');
+    if(!SIM.noHole(s)&&simView==='play'){dh=simCard(s.d[0])+`<div class="card back${simBackSeen?' still':''}" aria-label="暗牌"></div>`;simBackSeen=true;}
+    const shown=!SIM.noHole(s)&&simView==='play'?[s.d[0]]:vis;
+    dl=handLabel(shown);if(shown.length===2&&SIM.total(shown).t===21)dl='黑傑克';}
+  $('#gDealer').innerHTML=dh||'<div class="card ghost"></div>';$('#gDTotal').textContent=dl||'莊家';
+  // player hands
+  const p=s&&simView==='play'?SIM.pending(s):null;
+  const showRes=simView==='result'&&!simBusy;
+  $('#gHands').innerHTML=s?s.hands.map((h,i)=>{
+    const on=p&&p.type==='act'&&p.idx===i&&s.hands.length>1;
+    const lab=h.nat?'黑傑克':handLabel(h.cards);
+    const r=showRes&&h.res?RES[h.res]:null;
+    return `<div class="ph${on?' on':''}"><div class="hand ov">${h.cards.map(simCard).join('')}</div>
+      <div class="phinfo"><span class="total">${lab}</span><span class="betchip">${money(h.bet)}</span></div>
+      ${r?`<div class="res ${r[1]}">${r[0]} ${h.net?smoney(h.net):''}</div>`:''}</div>`;}).join('')
+    :`<div class="ph"><div class="hand"><div class="card ghost"></div><div class="card ghost"></div></div><div class="phinfo"><span class="betchip">${money(simBet)}</span></div></div>`;
+  // controls
+  const c=$('#gCtrl');
+  if(simView==='bet'){
+    const okBet=simBet>=sess.min&&simBet<=sess.chips;
+    c.innerHTML=`<div class="betamt">下注 <b>${money(simBet)}</b><span>最低 ${money(sess.min)}</span></div>
+      <div class="chiprow">${CHIPV.map(v=>`<button class="pchip p${v}" data-v="${v}"${simBet+v>sess.chips?' disabled':''}>${v>=1000?v/1000+'K':v}</button>`).join('')}</div>
+      <div class="btnrow"><button class="btn ghost sm" id="bClear">清除</button><button class="btn ghost sm" id="bRe"${sess.lastBet>sess.chips?' disabled':''}>重複 ${money(sess.lastBet)}</button><button class="btn sm" id="bDeal"${okBet?'':' disabled'}>發牌</button></div>`;
+    c.querySelectorAll('.pchip').forEach(b=>b.onclick=()=>{simBet=Math.min(sess.chips,simBet+ +b.dataset.v);renderGame();});
+    $('#bClear').onclick=()=>{simBet=0;renderGame();};
+    $('#bRe').onclick=()=>{simBet=Math.min(sess.lastBet,sess.chips);renderGame();};
+    $('#bDeal').onclick=simDeal;
+  }else if(simView==='play'&&p&&p.type==='ins'){
+    c.innerHTML=`<div class="ctrl-msg">${p.even?`你有黑傑克，莊家明牌 A。要平賠嗎？（即時贏 ${money(s.base)}）`:`莊家明牌 A。要買保險嗎？（保險 ${money(s.base/2)}）`}</div>
+      <div class="btnrow"><button class="btn ghost" id="iY">${p.even?'要平賠':'買保險'}</button><button class="btn" id="iN">${p.even?'不要':'不買'}</button></div>`;
+    $('#iY').onclick=()=>simChoose('Y');$('#iN').onclick=()=>simChoose('N');
+  }else if(simView==='play'&&p){
+    const lab=s.hands.length>1?`第 ${p.idx+1} / ${s.hands.length} 手牌`:'';
+    c.innerHTML=`<div class="ctrl-msg small">${lab}</div><div class="actions">${['H','S','D','P','R'].map(a=>`<button class="act a-${a} gact" data-a="${a}"${p.allowed.includes(a)?'':' disabled'}>${NAME[a]}<small>${{H:'HIT',S:'STAND',D:'DOUBLE',P:'SPLIT',R:'SURR.'}[a]}</small></button>`).join('')}</div>`;
+    c.querySelectorAll('.gact').forEach(b=>b.onclick=()=>simChoose(b.dataset.a));
+  }else if(simView==='result'){
+    const last=sess?sess.round>=sess.n||sess.chips<sess.min:true;
+    const insTxt=s&&s.ins?`（保險 ${smoney(s.insNet)}）`:'';
+    c.innerHTML=simBusy?'<div class="ctrl-msg">莊家補牌中…</div>':`<div class="ctrl-msg big ${s.net>0?'up':s.net<0?'down':'flat'}">本手 ${s.net?smoney(s.net):'打和'}${insTxt}</div>
+      <div class="btnrow"><button class="btn" id="bNext">${last?'查看結算':'下一手'}</button></div>`;
+    if(!simBusy)$('#bNext').onclick=simNext;
+  }
+  requestAnimationFrame(fitSim);}
+
+function fitSim(){const t=$('#gTable');if(!t||!t.clientHeight)return;
+  const W=t.clientWidth-28,H=t.clientHeight;
+  const hs=simRound?simRound.hands:[{cards:[0,0]}];
+  const dn=simRound?Math.max(2,simRound.d.length):2;
+  const units=Math.max(hs.reduce((a,h)=>a+1+0.45*Math.max(0,h.cards.length-1),0)+(hs.length-1)*0.35,1+0.45*(dn-1));
+  const ch=Math.max(40,Math.min(112,W/units/0.71,(H-118)/2));
+  t.style.setProperty('--simch',ch.toFixed(1)+'px');}
+window.addEventListener('resize',()=>{if(playMode==='table'&&screen==='play')fitSim();});
+
+function decTitle(x){
+  if(x.type==='ins')return x.even?'莊家明牌 A，平賠':'莊家明牌 A，保險';
+  const c=x.cat,u=upName(x.u);
+  const hand=c.type==='pair'&&!c.as?'一對 '+(c.v===11?'A':c.v):c.type==='soft'?'軟 '+(11+c.x):'硬 '+(c.as||c.t);
+  const tag=x.cards.length>2?'（'+x.cards.length+' 張牌）':x.split?'（分牌後）':'';
+  return `${hand}${tag} 對 莊家 ${u}`;}
+function decWhy(x){
+  if(x.type==='ins'){const q=(x.q*100).toFixed(1);
+    return x.even?`平賠等於買保險。不要平賠的話，你有約 ${(100-x.q*100).toFixed(1)}% 機會贏 1.5 倍，長遠平均比即時贏 1 倍更多。`
+      :`保險只在莊家拿到黑傑克時才贏 2 倍，而這時莊家拿到黑傑克的機會約 ${q}%，低於打和所需的 33.3%。長遠來說買保險必輸，所以基本策略是永遠不買。`;}
+  const c=x.cat,h=c.as?{type:'hard',t:c.as}:c.type==='pair'?{type:'pair',v:c.v}:c.type==='soft'?{type:'soft',x:c.x}:{type:'hard',t:c.t};
+  let pre='';if(x.cards.length>2)pre='已經有三張或以上的牌，只能加牌或停牌。';else if(x.split)pre='分牌後的手牌不能投降'+(sess&&!sess.rules.das?'，這個規則亦不能加倍':'')+'。';
+  return pre+explain(h,x.u,x.best,x.ev);}
+
+function renderSummary(){
+  const S=lastSum;if(!S){simView='setup';renderSetup();return;}
+  const acc=S.dec?Math.round(S.ok*100/S.dec):100,diff=S.net-S.opt;
+  const cnt=S.cnt,w=(cnt.win||0)+(cnt.bj||0),l=(cnt.lose||0)+(cnt.bust||0)+(cnt.dbj||0)+(cnt.surr||0);
+  const per=S.n?S.loss/S.n:0;
+  $('#simSum').innerHTML=`
+  <div class="box">
+    <div class="label">牌局結算 · ${S.n} 手${S.broke?'（籌碼不足最低注，提早結束）':S.n<S.planned?'（提早結算）':''}</div>
+    <div class="sum ssum">
+      <div class="wide"><b class="${S.net>0?'up':S.net<0?'down':''}">${smoney(S.net)}</b><span>淨輸贏</span></div>
+      <div><b>${money(S.end)}</b><span>最終籌碼</span><em class="flat">起始 ${money(S.start)}</em></div>
+      <div><b>${acc}%</b><span>決定正確率</span><em class="flat">${S.ok} / ${S.dec}</em></div>
+    </div>
+    <p class="muted">贏 ${w} 手 · 輸 ${l} 手 · 和 ${cnt.push||0} 手${cnt.bj?` · 黑傑克 ${cnt.bj} 次`:''}</p>
+  </div>
+  <div class="box">
+    <h2>與最佳行動的差別</h2>
+    <div class="cmp">
+      <div><span>期望值損失</span><b class="${S.loss>0?'down':'up'}">${S.loss>0?'−'+money(S.loss):'HK$0'}</b><small>每手約 ${money(per)}</small></div>
+      <div><span>同牌重打差距</span><b class="${diff>0?'up':diff<0?'down':''}">${smoney(diff)}</b><small>實際 ${smoney(S.net)}，按策略 ${smoney(S.opt)}</small></div>
+    </div>
+    <p class="muted"><b>期望值損失</b>：你的錯誤決定令你長遠平均少贏的金額，不受運氣影響，最能反映決策質素。</p>
+    <p class="muted"><b>同牌重打</b>：每一手用同一副牌、同樣注碼，按最佳策略重打一次的結果。結果受運氣影響，所以按策略打有時反而會輸得更多。</p>
+  </div>
+  <div class="box"><h2>錯誤回放</h2>
+    ${S.decs.length?S.decs.map(x=>`<div class="mrow"><div class="q">第 ${x.r} 手 · ${decTitle(x)}</div><div class="n">−${money(x.loss)}</div>
+      <div class="d"><span class="mcs">${miniCards(x.cards)}<i>對</i>${miniCards([x.up])}</span></div>
+      <div class="d">你選了 ${x.type==='ins'?'<span class="pill" style="background:#4a4f55">'+(x.even?'平賠':'買保險')+'</span>':pill(x.chosen)} 正確是 ${x.type==='ins'?'<span class="pill" style="background:#4a4f55">'+(x.even?'不要平賠':'不買')+'</span>':pill(x.best)}</div>
+      <details class="evd"><summary>原因</summary><p class="muted">${decWhy(x)}</p></details></div>`).join('')
+      :'<p class="muted">全部決定都符合最佳策略，做得好。</p>'}
+  </div>
+  <div class="btns"><button class="btn" id="sAgain">再玩一局</button><button class="btn ghost" id="sBack">返回</button></div>`;
+  $('#sAgain').onclick=()=>{simView='setup';renderSetup();startSession();};
+  $('#sBack').onclick=()=>{simView='setup';renderSim();};}
+
+$('#gEnd').onclick=()=>{if(simView!=='bet')return;
+  $('#gCtrl').innerHTML=`<div class="ctrl-msg">確定現在結算？已打 ${sess.round} 手。</div><div class="btnrow"><button class="btn" id="eYes">結算</button><button class="btn ghost" id="eNo">繼續打</button></div>`;
+  $('#eYes').onclick=simSummary;$('#eNo').onclick=renderGame;};
+document.querySelectorAll('#playModes button').forEach(b=>b.onclick=()=>setPlayMode(b.dataset.pm));
+setPlayMode(playMode);
+
 syncControls();updTop();deal();drawCharts();show('home');
 try{if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js');}catch(e){}
 })();
